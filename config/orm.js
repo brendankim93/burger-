@@ -1,4 +1,4 @@
-var connection = require("./config/connection.js");
+var connection = require("./connection.js");
 
 function printQuestionMarks(num) {
     var arr = [];
@@ -53,7 +53,7 @@ var orm = {
           cb(result);
         });
       },
-    updateOne: function(table, objColVals, condition, cb) {
+    update: function(table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
 
         queryString += " SET ";
@@ -69,7 +69,8 @@ var orm = {
     
           cb(result);
         });
-      },
-    };
+    }
+};
+
 module.exports = orm;
   
